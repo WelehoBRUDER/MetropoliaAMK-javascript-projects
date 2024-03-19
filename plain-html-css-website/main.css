@@ -1,0 +1,64 @@
+* {
+  color: white;
+  font-family: Roboto;
+  font-weight: 300;
+  text-shadow: -2px 2px 5px black;
+}
+
+main.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgb(96, 96, 96);
+  padding: 20px;
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+
+nav.top-bar {
+  position: fixed;
+  background: rgb(60, 60, 60);
+  width: 70%;
+  height: 60px;
+  left: 50%;
+  margin-left: -35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.nav-links {
+  padding: 8px;
+}
+
+div.nav-links a {
+  color: white;
+  background: rgb(20, 20, 20);
+  padding: 8px;
+  text-decoration: none;
+}
+
+section.content {
+  position: fixed;
+  background: rgb(40, 40, 40);
+  width: 70%;
+  height: 75%;
+  left: 50%;
+  top: 76px;
+  margin-left: -35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1.company-title {
+  font-weight: 400;
+}
+
+div.product-image::after {
+  content: attr(product-name);
+  opacity: 0.33;
+  font-size: 11px;
+}
