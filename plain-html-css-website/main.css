@@ -1,8 +1,17 @@
+:root {
+  --content-width: 100%;
+  --content-height: 100%;
+}
+
 * {
   color: white;
   font-family: Roboto;
   font-weight: 300;
   text-shadow: -2px 2px 5px black;
+}
+body {
+  overflow: hidden;
+  padding: 0;
 }
 
 main.bg {
@@ -10,22 +19,29 @@ main.bg {
   height: 100%;
   position: absolute;
   background: rgb(96, 96, 96);
-  padding: 20px;
+  padding: 0;
   margin: 0;
   left: 0;
   top: 0;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 nav.top-bar {
-  position: fixed;
+  position: relative;
   background: rgb(60, 60, 60);
-  width: 70%;
+  width: var(--content-width);
   height: 60px;
   left: 50%;
-  margin-left: -35%;
+  margin-left: calc(var(--content-width) / -2);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+img.company-logo {
+  width: 60px;
+  height: 60px;
 }
 
 div.nav-links {
@@ -40,25 +56,67 @@ div.nav-links a {
 }
 
 section.content {
-  position: fixed;
+  position: relative;
   background: rgb(40, 40, 40);
-  width: 70%;
-  height: 75%;
+  width: var(--content-width);
+  height: var(--content-height);
   left: 50%;
-  top: 76px;
-  margin-left: -35%;
+  margin-left: calc(var(--content-width) / -2);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 h1.company-title {
   font-weight: 400;
 }
 
+div.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+  height: 60%;
+}
+
+div.product {
+  width: 200px;
+  background: rgb(64, 63, 63);
+  height: 300px;
+}
+
+div.product * {
+  padding-left: 15px;
+}
+
+div.product-image {
+  position: relative;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.product-image > img {
+  width: 125px;
+}
+
 div.product-image::after {
   content: attr(product-name);
   opacity: 0.33;
   font-size: 11px;
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+}
+
+img.content-image {
+  width: 90%;
+  max-height: 280px;
 }
