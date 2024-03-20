@@ -133,7 +133,7 @@ div.product-image > img {
 }
 
 div.product-image::after {
-  content: attr(product-name);
+  content: attr(data-product-name);
   opacity: 0.33;
   font-size: 11px;
   position: absolute;
