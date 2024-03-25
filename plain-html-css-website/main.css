@@ -25,6 +25,7 @@
 :root {
   --content-width: 100%;
   --content-height: 100%;
+  font-size: 62.5%;
 }
 
 * {
@@ -125,7 +126,7 @@ section.content {
 
 h1.content-title {
   font-weight: 400;
-  font-size: 45px;
+  font-size: 3rem;
 }
 
 div.products-container {
@@ -133,39 +134,39 @@ div.products-container {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 1.5rem;
   position: relative;
   width: 100%;
-  padding: 24px;
-  padding-bottom: 48px;
+  padding: 1.5rem;
+  padding-bottom: 3rem;
 }
 
 div.product {
   transition: 0.15s;
   position: relative;
-  width: 200px;
+  width: 18.75rem;
   background: rgb(64, 63, 63);
-  height: 385px;
+  height: 24rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  box-shadow: inset 0 0 10px 5px rgb(39, 39, 39), 0 0 15px 7px rgb(24, 24, 24);
+  box-shadow: inset 0 0 0.6rem 0.3rem rgb(39, 39, 39), 0 0 1rem 0.5rem rgb(24, 24, 24);
 }
 
 div.product:hover{
   transform: scale(1.05);
-  box-shadow: inset 0 0 20px 10px rgb(39, 39, 39), 0 0 30px 14px rgb(24, 24, 24);
+  box-shadow: inset 0 0 1.2rem 0.6rem rgb(39, 39, 39), 0 0 2rem 0.9rem rgb(24, 24, 24);
   z-index: 5;
 }
 
 div.product * {
-  padding-left: 15px;
+  padding-left: 1rem;
 }
 
 div.product-image {
   position: absolute;
-  width: 180px;
+  width: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,8 +177,8 @@ div.product-image {
 }
 
 div.product-image > img {
-  width: 125px;
-  height: 125px;
+  width: 150px;
+  aspect-ratio: 1/1;
 }
 
 div.product-image::after {
@@ -199,8 +200,8 @@ div.product > h3 {
 div.product > p {
   padding: 10px;
   position: absolute;
-  top: 220px;
-  left: 0;
+  top: 250px;
+  left: 10px;
   font-size: 14px;
 }
 
@@ -208,6 +209,7 @@ img.content-image {
   width: 90%;
   max-width: 1280px;
   max-height: 300px;
+  aspect-ratio: 4.26/1;
 }
 p.content-text {
   width: 90%;
@@ -233,4 +235,12 @@ div.map-and-info iframe.map {
 div.contact-info p {
   font-weight: 200;
   font-style: italic;
+}
+@media only screen and (max-width: 550px) {
+  :root {
+    font-size: 50%;
+  }
+  img.company-logo {
+    display: none;
+  }
 }
