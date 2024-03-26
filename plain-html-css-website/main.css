@@ -32,7 +32,8 @@
   color: white;
   font-family: Roboto;
   font-weight: 300;
-  text-shadow: -2px 2px 5px black;
+  font-size: 1.6rem;
+  text-shadow: -2px 2px 0.5rem black;
 }
 body {
   overflow: hidden;
@@ -56,7 +57,7 @@ nav.top-bar {
   position: relative;
   background: rgb(60, 60, 60);
   width: var(--content-width);
-  height: 60px;
+  height: 6rem;
   left: 50%;
   margin-left: calc(var(--content-width) / -2);
   display: flex;
@@ -65,21 +66,21 @@ nav.top-bar {
 }
 
 img.company-logo {
-  width: 60px;
-  height: 60px;
+  width:6rem;
+  height: 6rem;
 }
 
 div.nav-links {
   display: flex;
-  padding: 8px;
-  gap: 20px;
+  padding: 0.8rem;
+  gap: 2rem;
 }
 
 div.nav-links a {
   position: relative;
   transition: 0.2s;
   color: white;
-  padding: 8px;
+  padding: 0.8rem;
   text-decoration: none;
 }
 
@@ -97,12 +98,12 @@ div.nav-links a::before {
 
 div.nav-links a:not(:last-child)::after {
   content: "";
-  height: 20px;
+  height: 2rem;
   width: 1px;
   background: white;
   position: absolute;
-  right: -7px;
-  bottom: 7px;
+  right: -0.7rem;
+  bottom: 7rem;
 }
 
 div.nav-links a:hover::before {
@@ -113,7 +114,7 @@ section.content {
   position: relative;
   background: rgb(40, 40, 40);
   width: var(--content-width);
-  min-height: calc(var(--content-height) - 60px);
+  min-height: calc(var(--content-height) - 6rem);
   left: 50%;
   margin-left: calc(var(--content-width) / -2);
   display: flex;
@@ -144,19 +145,19 @@ div.products-container {
 div.product {
   transition: 0.15s;
   position: relative;
-  width: 18.75rem;
+  width: 30rem;
   background: rgb(64, 63, 63);
-  height: 24rem;
+  height: 38.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  box-shadow: inset 0 0 0.6rem 0.3rem rgb(39, 39, 39), 0 0 1rem 0.5rem rgb(24, 24, 24);
+  box-shadow: 0 0 1rem 0.5rem rgba(24, 24, 24, 0.5);
 }
 
 div.product:hover{
   transform: scale(1.05);
-  box-shadow: inset 0 0 1.2rem 0.6rem rgb(39, 39, 39), 0 0 2rem 0.9rem rgb(24, 24, 24);
+  box-shadow: 0 2rem 1rem 0.5rem rgba(24, 24, 24, 0.5);
   z-index: 5;
 }
 
@@ -166,77 +167,78 @@ div.product * {
 
 div.product-image {
   position: absolute;
-  width: 280px;
+  width: 28rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 100px;
-  left: 10px;
-  background: rgb(0, 0, 0, 0.5);
+  top: 10rem;
+  left: 1rem;
+  /* background: rgb(0, 0, 0, 0.5); */
   padding: 0;
 }
 
 div.product-image > img {
-  width: 150px;
+  width: 15rem;
   aspect-ratio: 1/1;
 }
 
 div.product-image::after {
   content: attr(data-product-name);
   opacity: 0.33;
-  font-size: 11px;
+  font-size: 1.1rem;
   position: absolute;
-  bottom: -15px;
-  left: 30px;
+  bottom: -1.5rem;
+  left: 3rem;
 }
 
 div.product > h3 {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 21px;
+  font-size: 2.1rem;
+  text-decoration: underline;
 }
 
 div.product > p {
-  padding: 10px;
+  padding: 1rem;
   position: absolute;
-  top: 250px;
-  left: 10px;
-  font-size: 14px;
+  top: 25rem;
+  left: 1rem;
+  font-size: 1.4rem;
 }
 
 img.content-image {
   width: 90%;
-  max-width: 1280px;
-  max-height: 300px;
+  max-width: 128rem;
+  max-height: 30rem;
   aspect-ratio: 4.26/1;
 }
 p.content-text {
   width: 90%;
-  max-width: 1280px;
+  max-width: 128rem;
 }
 
 div.map-and-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 90px;
+  gap: 9rem;
   width: 90%;
-  margin-top: 50px;
-  padding-bottom: 30px;
+  margin-top: 5rem;
+  padding-bottom: 3rem;
 
 }
 
 div.map-and-info iframe.map {
-  width: 550px;
-  box-shadow: 0 0 8px 10px rgb(0,0,0,0.3);
+  width: 55rem;
+  box-shadow: 0 0 0.8rem 1rem rgb(0,0,0,0.3);
 }
 
 div.contact-info p {
   font-weight: 200;
   font-style: italic;
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 400px) {
   :root {
     font-size: 50%;
   }
