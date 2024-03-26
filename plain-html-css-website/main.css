@@ -110,7 +110,7 @@ div.nav-links a:hover::before {
   transform: scaleX(1)
 }
 
-section.content {
+.content {
   position: relative;
   background: rgb(40, 40, 40);
   width: var(--content-width);
@@ -244,5 +244,14 @@ div.contact-info p {
   }
   img.company-logo {
     display: none;
+  }
+
+  div.product {
+    width: 100vw;
+    margin-bottom: 4rem;
+  }
+
+  div.map-and-info iframe.map {
+    width: 100%;
   }
 }
