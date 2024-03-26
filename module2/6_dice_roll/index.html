@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice roll</title>
+</head>
+
+<body>
+  <ul class="numbers">
+
+  </ul>
+</body>
+
+</html>
+
+<script>
+  const numbers = document.querySelector(".numbers");
+
+  function rollDice() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
+  result = 1;
+  while (result !== 6) {
+    result = rollDice();
+    numbers.innerHTML += `<li>${result}</li>`;
+  }
+</script>

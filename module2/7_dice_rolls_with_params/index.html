@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice rolls with parameters</title>
+</head>
+
+<body>
+  <ul class="numbers">
+
+  </ul>
+</body>
+
+</html>
+
+<script>
+  const numbers = document.querySelector(".numbers");
+
+  function rollDice(sides) {
+    return Math.floor(Math.random() * sides) + 1;
+  }
+
+  result = 1;
+  const diceSides = +prompt("How many sides should the dice have?");
+  while (result !== diceSides) {
+    result = rollDice(diceSides);
+    numbers.innerHTML += `<li>${result}</li>`;
+  }
+</script>

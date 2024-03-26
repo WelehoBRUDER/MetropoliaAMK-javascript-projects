@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+  function even(numbers) {
+    return numbers.filter(num => num % 2 === 0);
+  }
+  const array = [1, 5, 2, 4, 7, 8, 16, 11, 3];
+  const evenArray = even(array);
+  console.log("Original", array);
+  console.log("Even", evenArray);
+</script>
