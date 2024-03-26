@@ -28,13 +28,6 @@
   font-size: 62.5%;
 }
 
-* {
-  color: white;
-  font-family: Roboto;
-  font-weight: 300;
-  font-size: 1.6rem;
-  text-shadow: -2px 2px 0.5rem black;
-}
 body {
   overflow: hidden;
   padding: 0;
@@ -51,6 +44,15 @@ main.bg {
   top: 0;
   overflow: hidden;
   overflow-y: auto;
+  
+}
+
+main * {
+  color: white;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 1.6rem;
+  text-shadow: 0 0 0.7rem black;
 }
 
 nav.top-bar {
