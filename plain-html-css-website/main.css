@@ -105,7 +105,7 @@ div.nav-links a:not(:last-child)::after {
   background: white;
   position: absolute;
   right: -0.7rem;
-  bottom: 7rem;
+  bottom: 0.7rem;
 }
 
 div.nav-links a:hover::before {
