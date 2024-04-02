@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page screenshots</title>
+</head>
+
+<body>
+  <h2>
+    Font
+  </h2>
+  <p>Font is from <a href="https://fonts.google.com/specimen/Roboto">Google Fonts. Name: Roboto.</a></p>
+  <pre>
+    @font-face {
+      font-family: "Roboto";
+      src: url("font/Roboto-Regular.ttf") format('truetype');
+      font-weight: 400;
+    }
+    
+    @font-face {
+      font-family: "Roboto";
+      src: url("font/Roboto-Light.ttf") format('truetype');
+      font-weight: 300;
+    }
+    
+    @font-face {
+      font-family: "Roboto";
+      src: url("font/Roboto-Thin.ttf") format('truetype');
+      font-weight: 200;
+    }
+    
+    @font-face {
+      font-family: "Roboto";
+      font-style: italic;
+      src: url("font/Roboto-ThinItalic.ttf") format('truetype');
+      font-weight: 200;
+    }
+
+    :root {
+      --content-width: 100%;
+      --content-height: 100%;
+      font-size: 62.5%;
+    }
+
+    main * {
+      color: white;
+      font-family: Roboto;
+      font-weight: 300;
+      font-size: 1.6rem;
+      text-shadow: 0 0 0.7rem black;
+    }
+  </pre>
+</body>
+
+</html>

@@ -18,6 +18,7 @@
 
 @font-face {
   font-family: "Roboto";
+  font-style: italic;
   src: url("font/Roboto-ThinItalic.ttf") format('truetype');
   font-weight: 200;
 }
@@ -52,7 +53,6 @@ main * {
   font-family: Roboto;
   font-weight: 300;
   font-size: 1.6rem;
-  text-shadow: 0 0 0.7rem black;
 }
 
 nav.top-bar {
