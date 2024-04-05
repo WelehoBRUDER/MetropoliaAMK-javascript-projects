@@ -94,6 +94,9 @@ const picArray = [
 
 // add your code here
 const section = document.querySelector("#pictures");
+const dialog = document.querySelector("dialog");
+const modalImage = document.querySelector("dialog img");
+const modalClose = document.querySelector("dialog span");
 for (const pic of picArray) {
 	const {
 		title,
@@ -114,6 +117,17 @@ for (const pic of picArray) {
 	imageElem.alt = title;
 	captionElem.textContent = caption;
 	desc.textContent = description;
+
+	// Popup modal
+	card.addEventListener("click", () => {
+		dialog.showModal();
+		modalImage.src = large;
+		modalImage.alt = title;
+	});
+
+	modalClose.addEventListener("click", () => {
+		dialog.close();
+	});
 	card.append(titleElem, wrapper, desc);
 	section.append(card);
 }
