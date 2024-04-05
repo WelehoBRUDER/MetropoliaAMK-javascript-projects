@@ -15,7 +15,7 @@ for (let i = 1; i <= 15000; i++) {
 	if (sum === eyeSum) matches++;
 }
 
-const probability = (matches / 10000) * 100;
+const probability = (matches / 15000) * 100;
 
 document.body.innerHTML += `
   <h2>The probability of ${diceRolls}d6 getting ${eyeSum} is about ${probability.toFixed(3)}%</h2>
