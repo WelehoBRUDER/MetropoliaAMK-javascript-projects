@@ -24,6 +24,11 @@ function createShowCard(show) {
 	const img = document.createElement("img");
 	const summaryElem = document.createElement("div");
 	summaryElem.innerHTML = summary;
+	card.classList.add("show-card");
+	title.classList.add("show-title");
+	link.classList.add("show-link");
+	img.classList.add("show-image");
+	summaryElem.classList.add("show-summary");
 	img.src = image ? image : "https://via.placeholder.com/210x295?text=Not%20Found";
 	title.textContent = name;
 	link.href = url;

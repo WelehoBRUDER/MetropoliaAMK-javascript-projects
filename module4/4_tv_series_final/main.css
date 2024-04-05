@@ -1,0 +1,64 @@
+body {
+  background: rgb(48, 13, 52);
+}
+
+* {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  background: purple;
+}
+
+article.show-card {
+  position: relative;
+  width: 20rem;
+  height: 35rem;
+  background: rgb(72, 36, 59);
+  margin: 1rem;
+}
+
+img.show-image {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3rem;
+}
+
+h2.show-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+a.show-link {
+  position: absolute;
+  top: 22rem;
+  font-size: 0.8rem;
+  height: 0.8rem;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+div.show-summary {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 2rem);
+  font-size: 0.75rem;
+  margin: 1rem;
+  max-height: 11.5rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+div#results {
+  display: flex;
+  flex-wrap: wrap;
+}
