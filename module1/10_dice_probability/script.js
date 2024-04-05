@@ -7,7 +7,7 @@ const eyeSum = parseInt(prompt("What sum do you want from your dice?"));
 
 let matches = 0;
 // Simulate dice throws 10000 times
-for (let i = 1; i <= 10000; i++) {
+for (let i = 1; i <= 15000; i++) {
 	let sum = 0;
 	for (let i = 1; i <= diceRolls; i++) {
 		sum += rollDice();
@@ -18,5 +18,5 @@ for (let i = 1; i <= 10000; i++) {
 const probability = (matches / 10000) * 100;
 
 document.body.innerHTML += `
-  <h2>The probability of ${diceRolls}d6 getting ${eyeSum} is about ${probability}%</h2>
+  <h2>The probability of ${diceRolls}d6 getting ${eyeSum} is about ${probability.toFixed(3)}%</h2>
 `;
