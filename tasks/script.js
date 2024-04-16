@@ -49,11 +49,25 @@ const linksToTasks = {
 	],
 };
 
-Object.entries(linksToTasks).forEach(([key, links]) => {
+const colors = [
+	{ normal: "red", lighter: "pink" },
+	{ normal: "green", lighter: "lime" },
+	{ normal: "grey", lighter: "silver" },
+];
+
+Object.entries(linksToTasks).forEach(([key, links], _) => {
 	console.log(links);
 	const module = document.createElement("div");
 	const title = document.createElement("h2");
 	const linksContainer = document.createElement("div");
+
+	module.classList.add("module");
+	title.classList.add("module-title");
+	linksContainer.classList.add("module-links");
+
+	const { normal, lighter } = colors[_];
+	module.style.setProperty("--color", normal);
+	module.style.setProperty("--lighter", lighter);
 
 	title.textContent = key;
 	links.forEach((link, index) => {
