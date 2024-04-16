@@ -3,6 +3,11 @@ const form = document.querySelector("#form");
 
 const school = { lat: 60.2237516, lon: 24.7581159 };
 
+const map = L.map("map").setView([60.1785553, 24.8786212], 13);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
 form.addEventListener("submit", async (e) => {
 	e.preventDefault();
 	const searchItem = query.value;
@@ -17,8 +22,41 @@ form.addEventListener("submit", async (e) => {
 		return data.features[0].geometry.coordinates;
 	});
 	console.log(address);
-	const routeToSchool = await getRoute(address[1], address[0]);
+	const origin = { lat: address[1], lon: address[0] };
+	const routeToSchool = await getRoute(origin.lat, origin.lon);
 	console.log(routeToSchool);
+	const googleEncodedRoute = routeToSchool.data.plan.itineraries[0].legs;
+	for (let i = 0; i < googleEncodedRoute.length; i++) {
+		let color = "";
+		switch (googleEncodedRoute[i].mode) {
+			case "WALK":
+				color = "green";
+				break;
+			case "BUS":
+				color = "red";
+				break;
+			case "RAIL":
+				color = "cyan";
+				break;
+			case "TRAM":
+				color = "magenta";
+				break;
+			default:
+				color = "blue";
+				break;
+		}
+		const route = googleEncodedRoute[i].legGeometry.points;
+		const pointObjects = L.Polyline.fromEncoded(route).getLatLngs(); // fromEncoded: convert Google encoding to Leaflet polylines
+		L.polyline(pointObjects)
+			.setStyle({
+				color,
+			})
+			.addTo(map);
+	}
+	map.fitBounds([
+		[origin.lat, origin.lon],
+		[school.lat, school.lon],
+	]);
 });
 
 async function getRoute(lat, lon) {
@@ -42,7 +80,7 @@ async function getRoute(lat, lon) {
       }
     }
   }`;
-	const route = await fetch(`https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`, {
+	return await fetch(`https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -53,10 +91,6 @@ async function getRoute(lat, lon) {
 		}),
 	}).then(async (response) => {
 		const data = await response.json();
-		console.log(data);
-		const time = data.data.plan.itineraries[0].legs[0].startTime;
-		console.log(time);
-		console.log(new Date(time));
-		console.log(data);
+		return data;
 	});
 }
