@@ -47,16 +47,25 @@ const linksToTasks = {
 		"t10/10.html",
 		"t11/11.html",
 	],
+	module4: [
+		"1_tv_series",
+		"2_tv_series",
+		"3_tv_series",
+		"4_tv_series_final",
+		"5_chuck_norris_joke",
+		"6_chuck_norris_joke",
+		"7_digitransit_routing",
+	],
 };
 
 const colors = [
 	{ normal: "red", lighter: "pink" },
 	{ normal: "green", lighter: "lime" },
 	{ normal: "grey", lighter: "silver" },
+	{ normal: "blue", lighter: "cyan" },
 ];
 
 Object.entries(linksToTasks).forEach(([key, links], _) => {
-	console.log(links);
 	const module = document.createElement("div");
 	const title = document.createElement("h2");
 	const linksContainer = document.createElement("div");
@@ -69,7 +78,7 @@ Object.entries(linksToTasks).forEach(([key, links], _) => {
 	module.style.setProperty("--color", normal);
 	module.style.setProperty("--lighter", lighter);
 
-	title.textContent = key;
+	title.textContent = `Module ${_ + 1}`;
 	links.forEach((link, index) => {
 		linksContainer.append(createLink(`${key}/${link}`, `Task ${index + 1}`));
 	});
