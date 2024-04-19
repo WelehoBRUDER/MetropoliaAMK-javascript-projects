@@ -99,7 +99,7 @@ function displayStats(route) {
 	const hours = Math.floor(minutes / 60);
 	const mins = Math.floor(minutes - hours * 60);
 
-	// Finally dump all the info to the user
+	// Finally dump all the time info to the user
 	time.textContent = `Alkuaika: ${startTimeDate}, Loppuaika: ${endTimeDate}, Kesto: ${
 		hours > 0 ? hours + "tuntia " : ""
 	}${mins} minuuttia.`;
